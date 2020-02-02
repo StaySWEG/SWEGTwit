@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Index</title>
+    {% endif %}
+  </head>
+
+  <body>
+    <div class="container-fluid">
+
+      <div class="jumbotron bg-primary text-white">
+        <h1 class="display-4">SWEGTwit</h1>
+        <p class="lead">This simple Web App is thought to give you the possibility to set filters for tweets you're downloading</p>
+        <hr class="my-4">
+      </div>
+      <div class="row">
+        <div class="col">
+          MENU PLACEHOLDER
+        </div>
+      
+        <div class="col-8">
+          <form id="filterForm" action="results" method="POST">
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="validationServer02">Since Date</label>
+                <input  type="date" 
+                        class="form-control" 
+                        id="sinceDate" 
+                        name="sinceDate"
+                        placeholder="YYYY-MM-DD"
+                        required/>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="validationServer02">To Date</label>
+                <input  type="date" 
+                        class="form-control" 
+                        id="toDate" 
+                        name="toDate"
+                        placeholder="YYYY-MM-DD"
+                        required/>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="validationServer03">Number of tweets to be downloaded</label>
+                <input  type="text" 
+                        class="form-control" 
+                        id="numTweets" 
+                        name="numTweets"
+                        placeholder="Number of tweets"
+                        required/>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col">
+                <label for="exampleFormControlTextarea1">Write keywords you want to search separated by coma (,)</label>
+                <textarea class="form-control" id="keywords" name="keywords" rows="3"></textarea>
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit form</button>
+          </form>
+        </div>
+        <div class="col">
+          OTHER OPTIONS PLACEHOLDER
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
