@@ -38,7 +38,7 @@ def result_set():
     """ Create table of tweets """
     result_table = []
     for tweet in tweets:
-        row = Row(tweet.user.screen_name, tweet.user.location, tweet.text.replace('\n', ' '))
+        row = Row(tweet.user.screen_name, tweet.user.location, tweet.full_text.replace('\n', ' '))
         result_table.append(row)
 
     """ Write file .csv """

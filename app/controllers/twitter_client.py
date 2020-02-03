@@ -13,6 +13,7 @@ class TwitterClient:
         tweets = tw.Cursor(
             self.api.search,
             q=search_words,
+            tweet_mode='extended',
             lang="it",
             since=since_date
         ).items(int(num_tweets))
